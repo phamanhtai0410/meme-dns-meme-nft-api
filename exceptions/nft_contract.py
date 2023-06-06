@@ -1,0 +1,30 @@
+class NftContractNotFoundEx(Exception):
+    def __init__(self, msg='Nft contract not found', *args: object, **kwargs) -> None:
+        super().__init__(*args)
+        self.status_code = 400
+        self.msg = msg
+        self.errors = kwargs.get('errors', [])
+        self.error_code = 'E_NFT_CONTRACT_NOT_FOUND'
+
+    pass
+
+
+class NftIndexTypeNotFoundEx(Exception):
+    def __init__(self, msg='Nft Index Type Not Found', *args: object, **kwargs) -> None:
+        super().__init__(*args)
+        self.status_code = 400
+        self.msg = msg
+        self.errors = kwargs.get('errors', [])
+        self.error_code = 'E_NFT_INDEX_NOT_FOUND'
+
+    pass
+
+class NftContractUserNotInWhitelistEx(Exception):
+    def __init__(self, msg='User not in whitelist', *args: object, **kwargs) -> None:
+        super().__init__(*args)
+        self.status_code = 400
+        self.msg = msg
+        self.errors = kwargs.get('errors', [])
+        self.error_code = 'E_NFT_CONTRACT_USER_NOT_IN_WHITE_LIST'
+
+    pass
