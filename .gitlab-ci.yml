@@ -8,7 +8,7 @@ variables:
   CONTAINER_REPO_ASIA_TESTNET: 968557029040.dkr.ecr.ap-southeast-1.amazonaws.com/test/inz-nft-api
 
  # CONTAINER_REPO_ASIA_PROD: harbor.atomsolution.vn/pos/gw_transaaction_service
-  NAMESPACE_STAG: memeism
+  NAMESPACE_STAG: meme
   NAMESPACE_TESTNET: inz-api-testnet
   NAMESPACE_PROD: gateway
   HELM_VALUE_FOLDER: memeism
