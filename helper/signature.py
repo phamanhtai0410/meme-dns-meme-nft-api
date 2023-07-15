@@ -83,11 +83,20 @@ class SignatureHelper:
         _from_to = [_owner_address, _to_address]
         _nft_and_token = [_nft_address, _currency_address]
         _id_and_amount = [_nft_id, _standard]
+        
+        
         #FIXME: current is only have seller does not have any other
         _additional_token_receivers = []
+        if Config.MARKETPLACE_FEE_TREASURY:
+            _additional_token_receivers.append(Config.MARKETPLACE_FEE_TREASURY)
 
         #FIXME: current is only owner get all amount
-        _all_amounts = [_price]
+        if Config.MARKETPLACE_FEE_TREASURY:
+            _all_amounts = [int(_price * (1000 - Config.MARKETPLACE_FEE_PERCENT) / 1000), int(_price * Config.MARKETPLACE_FEE_PERCENT / 1000)]
+        else:
+            _all_amounts = [_price]
+        
+            
 
         _deadline = int(dt_utcnow().timestamp() + Config.SIGNATURE_BUY_NFT_EXPIRE_TIME)
 

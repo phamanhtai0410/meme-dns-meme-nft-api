@@ -103,3 +103,6 @@ class Config:
         '15': 'finney',
         '18': 'ether'
     }
+    
+    MARKETPLACE_FEE_TREASURY = os.getenv('MARKETPLACE_FEE_TREASURY', None)
+    MARKETPLACE_FEE_PERCENT = int(os.getenv('MARKETPLACE_FEE_PERCENT', 0))
